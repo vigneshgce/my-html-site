@@ -1,0 +1,89 @@
+Need to build a simple website with a popup that collect the email address 
+
+show popup on visiting the website
+
+on submiting the popup need to call api and send the contact to our marketing system.
+
+we have api for that
+
+
+API references
+
+Content-Type: application/json
+Accept: application/json
+
+
+
+https://connect.mailerlite.com/api
+
+
+Authorization: Bearer XXX
+
+
+token , hard code it now
+
+eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiI0IiwianRpIjoiZWUzMzA4YTAyNGNhYWY4ZjQxNzYzZDQzNmUyNzIzNGQ0YTQzY2NkOWY4MDYxZGZiZDQ2ODRiNDQ5MDg0MDY1MGNiN2JhM2Y2Njg3ZDc2YWIiLCJpYXQiOjE3NDMxNTYwMTMuMTcwNDgyLCJuYmYiOjE3NDMxNTYwMTMuMTcwNDg1LCJleHAiOjQ4OTg4Mjk2MTMuMTYwMzA1LCJzdWIiOiIxNDI4MjkwIiwic2NvcGVzIjpbXX0.tgIJuV8ov6-Lpop2dLtR9iwMV1vTu--EFkP5UaDhx5_gvSfvsbPGckbwo8BkvFwWG2lrWhSbxu2Zw48UvCmju_BICuOuYWswkD63srXA7w5Gy0bOedKAE-2u0XJyWeuD5L0jm3ucWRaIGoUf-gRRA34uwa5oVgRCzXeSIBLXSKXJ8-G1CnJawLABKARfUQGbC7XNRbFWEfYLVGEcWJxRmIonuufYwX3XCEiNhO_edEtgAbIuwO3oL9j1BcHtDiyHutn3SOQk1lL4MP8EIinzrIH9TJn7fW5pUnNRdsky6BC4QCERkAtq4SIVgJyW1E_ZoiGOUm_IfQXcpfBAK8PJbMrOOoGknkJC19Fq0vv5lNxakZfKWUd89uc_UTNYwCHpA5M5z37rPeK9bXC8fhWatQJvj8pl6jJU3XCIVL6jz64WZ0K0aHZeKoSpyrFubl3v8l3p_D9R4XXnPGZ7ePlul3cTATNYqNbM3UdJ7dAfIdgU36MYE82ZgW8xSJ2tz5v4Yk3ba-zeP5IaCVfwnt38O0j1IhNvwDac6PEV9nJg9LBs-dlrL9ryo-FVC8hkSZs23PxfJ6ek_ROZ_EaBg3y4yjUfUdUR95TMgQa9PpzAdlbqvXnTlZpLCnszT1DuU_BgHd4niRA5E-3fBaFXSMa6eyM74iv5ambRF2nGDRdRsps
+
+
+Create/upsert subscriber
+
+
+
+POST https://connect.mailerlite.com/api/subscribers
+
+
+Sample payload
+
+{
+    "email": "dummy@example.com",
+    "fields": {
+      "name": "Dummy",
+      "last_name": "Testerson"
+    },
+    "groups": [
+        "4243829086487936",
+        "14133878422767533",
+        "31985378335392975"
+    ]
+}
+
+
+
+group id we aim : 150098539514431459
+
+
+
+response Sample
+{
+  "data": {
+    "id": "31897397363737859",
+    "email": "dummy@example.com",
+    "status": "active",
+    "source": "api",
+    "sent": 0,
+    "opens_count": 0,
+    "clicks_count": 0,
+    "open_rate": 0,
+    "click_rate": 0,
+    "ip_address": null,
+    "subscribed_at": "2021-08-31 14:22:08",
+    "unsubscribed_at": null,
+    "created_at": "2021-08-31 14:22:08",
+    "updated_at": "2021-08-31 14:22:08",
+    "fields": {
+      "city": null,
+      "company": null,
+      "country": null,
+      "last_name": "Testerson",
+      "name": "Dummy",
+      "phone": null,
+      "state": null,
+      "z_i_p": null
+    },
+    "groups": [],
+    "opted_in_at": null,
+    "optin_ip": null
+  }
+}
+
+Keep website as simple as possible.  because its for demo. and Aim for nice user interface and simple design.
